@@ -1,6 +1,6 @@
 import "./pages/index.css";
 import { initialCards } from "./scripts/cards";
-import { createCard, deleteCard, handleLikeClick } from "./scripts/card";
+import { createCard } from "./scripts/card";
 import { openPopup, closePopup } from "./scripts/popup";
 
 const placesList = document.querySelector(".places__list");
@@ -22,7 +22,7 @@ const placeLinkInput = formAddPlace.querySelector(".popup__input_type_url");
 
 function showCards(cards) {
   cards.forEach((cardContent) => {
-    const card = createCard(cardContent);
+    const card = createCard(cardContent, openImage);
     placesList.append(card);
   });
 }
@@ -33,7 +33,7 @@ addButton.addEventListener("click", function () {
   openPopup(popupAdd);
 });
 
-export function openImage(cardImage) {
+function openImage(cardImage) {
   previewImage.src = cardImage.link;
   previewImage.alt = cardImage.name;
   popupCaption.textContent = cardImage.name;

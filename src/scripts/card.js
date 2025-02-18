@@ -1,6 +1,4 @@
-import { openImage } from "../index";
-
-function createCard(cardContent) {
+function createCard(cardContent, openImage, deleteCard, handleLikeClick) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
@@ -20,15 +18,15 @@ function createCard(cardContent) {
     handleLikeClick(likeButton);
   });
 
-  return cardElement;
+  function deleteCard(cardElement) {
+    cardElement.remove();
+  }
+
+  function handleLikeClick(likeButton) {
+    likeButton.classList.toggle("card__like-button_is-active");
+  }
+
+  return cardElement
 }
 
-function deleteCard(cardElement) {
-  cardElement.remove();
-}
-
-function handleLikeClick(likeButton) {
-  likeButton.classList.toggle("card__like-button_is-active");
-}
-
-export { createCard, deleteCard, handleLikeClick };
+export { createCard };
