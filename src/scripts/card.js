@@ -1,4 +1,4 @@
-function createCard(cardContent, openImage, deleteCard, handleLikeClick) {
+function createCard(cardContent, openPopupImage, deleteCard, handleLikeClick) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
@@ -12,7 +12,7 @@ function createCard(cardContent, openImage, deleteCard, handleLikeClick) {
     deleteCard(cardElement);
   });
   cardImage.addEventListener("click", function () {
-    openImage(cardContent);
+    openPopupImage(cardContent);
   });
   likeButton.addEventListener("click", function () {
     handleLikeClick(likeButton);

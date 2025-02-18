@@ -22,7 +22,7 @@ const placeLinkInput = formAddPlace.querySelector(".popup__input_type_url");
 
 function showCards(cards) {
   cards.forEach((cardContent) => {
-    const card = createCard(cardContent, openImage);
+    const card = createCard(cardContent, openPopupImage);
     placesList.append(card);
   });
 }
@@ -33,7 +33,7 @@ addButton.addEventListener("click", function () {
   openPopup(popupAdd);
 });
 
-function openImage(cardImage) {
+function openPopupImage(cardImage) {
   previewImage.src = cardImage.link;
   previewImage.alt = cardImage.name;
   popupCaption.textContent = cardImage.name;
