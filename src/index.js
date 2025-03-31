@@ -51,7 +51,7 @@ editButton.addEventListener("click", () => {
   openPopup(popupEditProfile);
 });
 
-function formEditSubmit(event) {
+function handleEditFormSubmit(event) {
   event.preventDefault();
   renderLoading(true, formEditProfile);
   const nameValue = nameInput.value;
@@ -76,7 +76,7 @@ function openPopupImage(cardImage) {
   openPopup(popupImgView);
 }
 
-function formAddSubmit(event) {
+function handleAddFormSubmit(event) {
   event.preventDefault();
   renderLoading(true, formAddPlace);
   const namePlace = placeNameInput.value;
@@ -100,7 +100,7 @@ function formAddSubmit(event) {
     });
 }
 
-function formEditAvatarSubmit(event) {
+function handleAvatarFormSubmit(event) {
   event.preventDefault();
   renderLoading(true, formEditAvatar);
   const avatarLink = avatarLinkInput.value;
@@ -180,7 +180,7 @@ const renderLoading = (isLoading, formElement) => {
   }
 };
 
-formEditProfile.addEventListener("submit", formEditSubmit);
-formEditAvatar.addEventListener("submit", formEditAvatarSubmit);
-formAddPlace.addEventListener("submit", formAddSubmit);
+formEditProfile.addEventListener("submit", handleEditFormSubmit);
+formEditAvatar.addEventListener("submit", handleAvatarFormSubmit);
+formAddPlace.addEventListener("submit", handleAddFormSubmit);
 enableValidation(settingValid);
