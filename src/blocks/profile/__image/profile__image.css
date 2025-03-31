@@ -7,6 +7,19 @@
   background-size: cover;
   background-position: center;
   margin: 0 29px 0 0;
+  position: relative;
+}
+
+.profile__image:hover  {
+  filter: brightness(70%);
+} 
+
+.profile__image:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/src/images/edit-profile-icon.svg') center no-repeat;
+  background-size: 26px; 
 }
 
 @media screen and (max-width: 740px) {
